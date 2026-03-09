@@ -1,10 +1,9 @@
 // src/pages/Home.jsx
-import { Link } from 'react-router-dom'; // 1. Added this import!
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/Buttons';
 
-// 2. Changed the outer <div> to a <Link> and added the 'to' prop
 const NewsCard = ({ id, date, title, text }) => (
     <Link to={`/news/${id}`} className="flex flex-col gap-3 font-worksans group cursor-pointer">
         <div className="w-full aspect-[4/5] overflow-hidden rounded-md border border-zinc-800 relative">

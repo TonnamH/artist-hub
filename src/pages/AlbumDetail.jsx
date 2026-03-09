@@ -6,13 +6,10 @@ import Footer from '../components/Footer';
 
 const TrackRow = ({ title, duration, isPlaying, onToggle }) => {
   return (
-    // ✨ FIX 1: Changed padding to py-1.5 and gap to gap-3 to exactly match Discography
     <li onClick={onToggle} className={`flex items-center gap-3 py-1.5 px-3 rounded-md cursor-pointer transition-all duration-300 ${isPlaying ? 'bg-zinc-900 shadow-inner' : 'hover:bg-zinc-900/50'}`}>
       <div className={`w-6 h-6 shrink-0 rounded-full border flex items-center justify-center transition-all duration-300 ${isPlaying ? 'border-orange-600 bg-orange-600 shadow-[0_0_10px_rgba(234,88,12,0.5)]' : 'border-zinc-500 hover:border-white'}`}>
         {isPlaying ? <svg className="w-3 h-3 text-white animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg> : <svg className="w-3 h-3 text-zinc-300 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>}
       </div>
-      
-      {/* ✨ FIX 2: Changed text size to text-sm to match Discography perfectly */}
       <span className={`font-bold text-sm tracking-wide flex-grow transition-colors ${isPlaying ? 'text-orange-500' : 'text-zinc-200 hover:text-white'}`}>{title}</span>
       
       {isPlaying ? <span className="text-xs font-bold text-orange-500 uppercase tracking-widest animate-pulse">Playing</span> : <span className="text-xs text-zinc-500 font-mono font-bold">{duration}</span>}
@@ -129,8 +126,6 @@ export default function AlbumDetail() {
             </div>
 
             <div className="w-full flex-grow mt-4 md:mt-0">
-              
-              {/* ✨ FIX 3: Updated to Oswald font and matched the sizing of Discography */}
               <div className="flex items-baseline gap-3 mb-2">
                 <h3 className="font-oswald text-4xl md:text-5xl font-extrabold tracking-tight uppercase text-white">
                   {currentAlbum.title}
@@ -141,15 +136,13 @@ export default function AlbumDetail() {
               </div>
 
               <div className="w-full h-[2px] bg-zinc-700/60 mb-6"></div>
-              
-              {/* ✨ FIX 4: Changed to space-y-3 to match Discography */}
+
               <ul className="space-y-3 mb-16">
                 {tracks.map((track, idx) => (
                   <TrackRow key={idx} title={track.title} duration={track.duration} isPlaying={playingTrackIndex === idx} onToggle={() => setPlayingTrackIndex(playingTrackIndex === idx ? null : idx)} />
                 ))}
               </ul>
-
-              {/* FAN REVIEW FORM SECTION */}
+              
               <div className="bg-black/40 border border-zinc-800/50 p-6 rounded-sm mt-8">
                 <h4 className="font-oswald text-xl font-bold text-white mb-4 uppercase">Leave a Review</h4>
                 <form onSubmit={handleReviewSubmit} className="space-y-4">

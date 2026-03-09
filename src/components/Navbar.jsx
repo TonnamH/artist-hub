@@ -11,13 +11,11 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 w-full h-20 md:h-24 bg-black z-50 border-b border-black px-4 md:px-8 flex items-center justify-between gap-6 font-oswald text-xs tracking-wider">
-            
             {/* Logo */}
             <Link to="/" className="flex items-center justify-start shrink-0" onClick={() => setIsOpen(false)}>
                 <img src="/logo.png" alt="ONE OK ROCK Logo" className="w-20 md:w-40 h-auto object-contain" />
             </Link>
 
-            {/* Desktop Menu (Hidden on mobile, visible on md and up) */}
             <div className="hidden md:flex items-center gap-10 ml-auto">
                 <div className="flex items-center gap-8 text-white">
                     <Link to="/" className="font-bold hover:text-orange-600 transition-colors">HOME</Link>

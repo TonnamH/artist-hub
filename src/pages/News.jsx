@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-// Helper for image placeholders
 const getPlaceHolderImg = (width, height, text) => `https://via.placeholder.com/${width}x${height}.png?text=${encodeURIComponent(text)}`;
 
 export default function News() {
     const bgImage = getPlaceHolderImg(1920, 1080, "News Background");
 
-    // Dummy data with Lorem Ipsum for the prototype
     const newsItems = [
         {
             id: "japan-tour-2025",
@@ -54,7 +52,6 @@ export default function News() {
 
                     <div className="space-y-12">
                         {newsItems.map((item) => (
-                            // We're wrapping each item in a Link to prepare for the News Detail page!
                             <Link
                                 to={`/news/${item.id}`}
                                 key={item.id}

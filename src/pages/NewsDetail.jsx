@@ -4,10 +4,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export default function NewsDetail() {
-  // Grab the specific news ID from the URL (e.g., "japan-tour-2025")
   const { newsId } = useParams();
 
-  // Our mini-database 
   const newsDatabase = {
     "japan-tour-2025": { 
       date: "2025.02.17", 
@@ -31,10 +29,8 @@ export default function NewsDetail() {
     }
   };
 
-  // Find the article, default to the first one if not found
   const article = newsDatabase[newsId] || newsDatabase["japan-tour-2025"];
   
-  // The dynamic image path based on the URL parameter!
   const articleImage = `/news/${newsId}.jpg`;
 
   return (
@@ -59,11 +55,7 @@ export default function NewsDetail() {
 
         {/* 2. Article Content Section (max-w-4xl acts as the width anchor) */}
         <section className="max-w-4xl mx-auto px-8 py-16">
-          
-          {/* Main Article Image Wrapper */}
-          {/* ✨ UPDATED ✨: Aspect ratio constraints removed. The div just acts as a container with styles. overflow-hidden is removed to let shadow render correctly without max-height. */}
-          <div className="w-full mb-12 border border-zinc-800 shadow-2xl bg-zinc-900">
-            {/* ✨ UPDATED ✨: h-auto to maintain natural aspect ratio, object-contain removed to display full image */}
+         <div className="w-full mb-12 border border-zinc-800 shadow-2xl bg-zinc-900">
             <img 
               src={articleImage} 
               alt={article.title} 

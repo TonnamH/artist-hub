@@ -46,7 +46,6 @@ export default function Schedule() {
     setError('');
     setSuccess(false);
 
-    // INPUT VALIDATION LOGIC
     if (!vipCode.trim()) {
       setError('Please enter a pre-sale code.');
       return;

@@ -13,7 +13,6 @@ export default function About() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* 1. Cinematic Hero Section */}
         <section className="relative pt-32 pb-24 h-[40vh] min-h-[350px] flex items-center justify-center overflow-hidden border-b border-zinc-900">
           <div className="absolute inset-0 z-0">
             <img 
@@ -22,7 +21,6 @@ export default function About() {
               alt="Live Concert Background" 
               className="w-full h-full object-cover blur-sm opacity-30 scale-105" 
             />
-            {/* Dark gradient overlay to blend into the content below */}
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent"></div>
           </div>
 
@@ -36,26 +34,20 @@ export default function About() {
           </div>
         </section>
 
-        {/* 2. Band Bio Section */}
         <section className="max-w-7xl mx-auto px-8 py-20 md:py-32">
           <div className="flex flex-col lg:flex-row gap-16 items-center lg:items-start">
-            
-            {/* Left Side: Band Photo */}
             <div className="w-full lg:w-1/2 shrink-0 group">
               <div className="w-full aspect-[4/3] overflow-hidden border border-zinc-800 shadow-[0_0_40px_rgba(0,0,0,0.6)] bg-zinc-900 relative">
                 <img 
                   src={bandImage} 
                   onError={(e) => e.target.src = getPlaceHolderImg(800, 600, "Band Profile Placeholder")}
                   alt="ONE OK ROCK Band Members" 
-                  // Here is the hover trick: Grayscale by default, full color on hover!
                   className="w-full h-full object-cover grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:scale-105" 
                 />
               </div>
             </div>
 
-            {/* Right Side: Biography Text */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center">
-              {/* Little orange accent line */}
               <div className="w-12 h-1.5 bg-orange-600 mb-8"></div>
               
               <div className="prose prose-invert prose-lg max-w-none text-zinc-300 font-worksans leading-relaxed text-justify space-y-6">

@@ -1,5 +1,5 @@
 // src/components/Footer.jsx
-import { Link } from 'react-router-dom'; // 1. Added React Router Link
+import { Link } from 'react-router-dom';
 
 const YoutubeIcon = () => (<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z" /></svg>);
 const TwitterIcon = () => (<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>);
@@ -11,14 +11,12 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 font-worksans text-zinc-300">
                 <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="flex items-center justify-center shrink-0">
-                        {/* 2. Made the logo clickable back to Home */}
                         <Link to="/">
                             <img src="/logo.png" alt="ONE OK ROCK Logo" className="w-40 md:w-50 h-auto object-contain" />
                         </Link>
                     </div>
                     <div className="flex flex-col items-center md:items-end gap-6">
                         <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-sm font-bold uppercase tracking-wider">
-                            {/* 3. Replaced <a> with <Link> and generated the route dynamically */}
                             {["Home", "News", "About", "Schedule", "Discography"].map(link => {
                                 const path = link === "Home" ? "/" : `/${link.toLowerCase()}`;
                                 return (
@@ -29,7 +27,6 @@ export default function Footer() {
                             })}
                         </div>
                         <div className="flex items-center gap-6 text-zinc-500">
-                            {/* Pro-tip: Added target="_blank" so social links open in a new tab! */}
                             <a href="https://twitter.com/ONEOKROCK_japan" target="_blank" rel="noreferrer" className="hover:text-white transition-opacity"><TwitterIcon /></a>
                             <a href="https://www.instagram.com/oneokrockofficial/" target="_blank" rel="noreferrer" className="hover:text-white transition-opacity"><InstagramIcon /></a>
                             <a href="https://www.youtube.com/channel/UCzycs8MqvIY4nXWwS-v4J9g" target="_blank" rel="noreferrer" className="hover:text-white transition-opacity"><YoutubeIcon /></a>
