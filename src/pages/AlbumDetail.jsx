@@ -11,7 +11,6 @@ const TrackRow = ({ title, duration, isPlaying, onToggle }) => {
         {isPlaying ? <svg className="w-3 h-3 text-white animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg> : <svg className="w-3 h-3 text-zinc-300 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>}
       </div>
       <span className={`font-bold text-sm tracking-wide flex-grow transition-colors ${isPlaying ? 'text-orange-500' : 'text-zinc-200 hover:text-white'}`}>{title}</span>
-      
       {isPlaying ? <span className="text-xs font-bold text-orange-500 uppercase tracking-widest animate-pulse">Playing</span> : <span className="text-xs text-zinc-500 font-mono font-bold">{duration}</span>}
     </li>
   );
@@ -117,7 +116,7 @@ export default function AlbumDetail() {
           
           <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
             
-            <div className="w-full max-w-[450px] shrink-0 sticky top-32">
+            <div className="w-full max-w-[450px] shrink-0 md:sticky md:top-32">
               <h2 className="font-oswald text-2xl md:text-3xl font-extrabold text-white mb-6 tracking-wide uppercase">ALBUM DETAIL</h2>
               
               <div className="w-full shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-zinc-800/80">
@@ -136,13 +135,13 @@ export default function AlbumDetail() {
               </div>
 
               <div className="w-full h-[2px] bg-zinc-700/60 mb-6"></div>
-
+              
               <ul className="space-y-3 mb-16">
                 {tracks.map((track, idx) => (
                   <TrackRow key={idx} title={track.title} duration={track.duration} isPlaying={playingTrackIndex === idx} onToggle={() => setPlayingTrackIndex(playingTrackIndex === idx ? null : idx)} />
                 ))}
               </ul>
-              
+
               <div className="bg-black/40 border border-zinc-800/50 p-6 rounded-sm mt-8">
                 <h4 className="font-oswald text-xl font-bold text-white mb-4 uppercase">Leave a Review</h4>
                 <form onSubmit={handleReviewSubmit} className="space-y-4">
