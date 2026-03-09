@@ -106,9 +106,10 @@ export default function AlbumDetail() {
       <audio ref={audioRef} src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="none" />
       <Navbar />
 
-      <div className="fixed inset-0 z-0 pointer-events-none">
+      {/* ✨ FIX: Changed from fixed to absolute with a set height to prevent screenshot glitches */}
+      <div className="absolute top-0 left-0 w-full h-[1200px] z-0 pointer-events-none overflow-hidden">
         <img src={coverImage} alt="Background" className="w-full h-full object-cover blur-3xl scale-125 opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-zinc-950/80 to-zinc-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/40 via-zinc-950/90 to-zinc-950"></div>
       </div>
 
       <main className="relative z-10 flex-grow pt-32 pb-24 border-b border-zinc-900 w-full">
