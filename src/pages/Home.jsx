@@ -82,7 +82,7 @@ export default function Home() {
             </div>
 
             {/* Upcoming Events Section */}
-            <section className="border-t border-zinc-900">
+            <section>
 
                 {/* Top Header - Solid Black with White Accent Line */}
                 <div className="bg-black py-8 px-8">
